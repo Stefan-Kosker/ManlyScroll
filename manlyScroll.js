@@ -5,11 +5,11 @@ var infiniteScroll = function () {
     if (paginator[0]) {
         paginator[0].style.display = 'none';
     }
-    window.onscroll = function() {
-        if (document.documentElement.scrollTop > (document.documentElement.offsetHeight -  window.innerHeight - 30) && loading === false) {
+    window.onscroll = function () {
+        if (document.documentElement.scrollTop > (document.documentElement.offsetHeight - window.innerHeight - 30) && loading === false) {
             loading = true;
-            var list = document.getElementsByClassName('infinite-scroll');
-            ajaxAndAppendHtml(window.location.href + '&page=' + nextPage, list[0]);
+            var list = document.getElementById('infinite-scroll');
+            ajaxAndAppendHtml(window.location.href + '&page=' + nextPage, list);
             nextPage += 1;
         }
     };
@@ -17,9 +17,10 @@ var infiniteScroll = function () {
     var ajaxAndAppendHtml = function (url, node) {
         fetch(url).then(function (response) {
             response.text().then(function (text) {
-                var filterScrollElements = new RegExp('(infinite-scroll">)(.*)(<\\/div><ul class="pagination)');
-                var processedText = text.match(filterScrollElements);
-                node.innerHTML += processedText[2];
+                var parser = new DOMParser();
+                var htmlBatch = parser.parseFromString(text, 'text/html');
+                var infiniteScrollBatch = htmlBatch.getElementById('infinite-scroll');
+                node.innerHTML += infiniteScrollBatch.innerHTML;
                 loading = false;
             });
         });

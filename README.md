@@ -3,8 +3,8 @@ I regularly check for issues / PR and such.
 
 ## How to use
 1. Include manlyScroll.min.js in your header
-2. Give your infiniteScrolling Element the class 'infinite-scroll' (as last class)
-3. Give your Paginator the class 'paginator' (as first class)
+2. Give your infiniteScrolling Element the id 'infinite-scroll'
+3. Give your Paginator the class 'paginator'
 
 When your pages are ordered like 
 
@@ -32,9 +32,9 @@ and so on. Your HTML of your search page should look like this:
 ```
 Sidenotes: 
 - It is not important where the pagination is, it will be hidden anyways
-- It is important that infinite-scroll is last class and paginator is first class
-- Sadly, paginator must be ul atm. DOM Parser won't work under firefox & safari properly.
-I will work on this later
+- It is important that infinite-scroll id and paginator classes are given
+- It is not important what kind of elements they are. ul, div, span, if you are funny p or maybe even br (please let 
+me know when you achieve a ux friendly pagination with using < br />)
 
 
 ## Why ManlyScroll?
