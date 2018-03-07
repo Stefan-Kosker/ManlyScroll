@@ -1,0 +1,19 @@
+#loading-indicator {
+  animation: spin 2s linear infinite;
+  margin: auto;
+  border: 1rem solid #f9f9f9;
+  border-top: 1rem solid #aad200;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

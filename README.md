@@ -2,7 +2,7 @@
 I regularly check for issues / PR and such. 
 
 ## How to use
-1. Include manlyScroll.min.js in your header
+1. Include manlyScroll.min.js and manlyScroll.min.css in your header
 2. Give your infiniteScrolling Element the id 'infinite-scroll'
 3. Give your Paginator the class 'paginator'
 
@@ -24,8 +24,8 @@ and so on. Your HTML of your search page should look like this:
 
 ```
 <h1>...</h1>
-<div class="class-1 class-2 infinite-scroll>
-    content (which also will be ajax called
+<div id="infinite-scroll" class="class-1 class-2>
+    content (which also will be ajax called)
 </div>
 <ul class="pagination class-3 class 4">...</ul>
 
