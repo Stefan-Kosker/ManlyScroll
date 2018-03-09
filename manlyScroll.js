@@ -3,17 +3,19 @@ var infiniteScroll = function () {
     var noMorePagesFollowing = false;
     var loadingIndicator = '<div id="loading-indicator"></div>';
     var nextPage = 2;
-    var paginator = document.getElementsBy_LoadingIndicator.scssClassName('pagination');
+    var paginator = document.getElementsByClassName('pagination');
     if (paginator[0]) {
         paginator[0].style.display = 'none';
     }
     window.onscroll = function () {
-        if (document.documentElement.scrollTop > (document.documentElement.offsetHeight - window.innerHeight - 30) && loading === false && noMorePagesFollowing === false) {
-            loading = true;
+        if (loading === false && noMorePagesFollowing === false && document.documentElement.scrollTop > (document.documentElement.offsetHeight - window.innerHeight - 30)) {
             var list = document.getElementById('infinite-scroll');
-            list.insertAdjacentHTML('beforeend', loadingIndicator);
-            ajaxAndAppendHtml(window.location.href + '&page=' + nextPage, list);
-            nextPage += 1;
+            loading = true;
+            if (list !== null) {
+                list.insertAdjacentHTML('beforeend', loadingIndicator);
+                ajaxAndAppendHtml(window.location.href + '&page=' + nextPage, list);
+                nextPage += 1;
+            }
         }
     };
 

@@ -1,11 +1,11 @@
 #loading-indicator {
   animation: spin 2s linear infinite;
-  margin: auto;
-  border: 1rem solid #f9f9f9;
-  border-top: 1rem solid #aad200;
+  margin: 1rem auto;
+  border: .25rem solid $publication-lighter-gray;
+  border-top: .25rem solid $emerald;
   border-radius: 50%;
-  width: 4rem;
-  height: 4rem;
+  width: 2rem;
+  height: 2rem;
 }
 
 @keyframes spin {

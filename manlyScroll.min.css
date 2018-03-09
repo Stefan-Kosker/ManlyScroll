@@ -1,1 +1,1 @@
-#loading-indicator{animation:spin 2s linear infinite;margin:auto;border:1rem solid #f9f9f9;border-top:1rem solid #aad200;border-radius:50%;width:4rem;height:4rem}@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+#loading-indicator{animation:spin 2s linear infinite;margin:1rem auto;border:.25rem solid;border-top:.25rem solid $emerald;border-radius:50%;width:2rem;height:2rem}@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
