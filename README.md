@@ -5,20 +5,11 @@ I regularly check for issues / PR and such.
 1. Include manlyScroll.min.js and manlyScroll.min.css in your header
 2. Give your infiniteScrolling Element the id 'infinite-scroll'
 3. Give your Paginator the class 'paginator'
+4. Give your next button of your paginator the class 'next'
 
-When your pages are ordered like 
-
-    www.manly.com/example?foo=bar&amp;page=2
-
-, it works automaticly.
+Than it works automaticly.
 
 ## Example:
-
-Your searchResult Pages have the URL like:
-    
-    www.yourPage.com/search.html?results=foo
-    www.yourPage.com/search.html?results=foo&page=2
-    www.yourPage.com/search.html?results=foo&page=3
     
 and so on. Your HTML of your search page should look like this:
 
@@ -27,21 +18,24 @@ and so on. Your HTML of your search page should look like this:
 <div id="infinite-scroll" class="class-1 class-2>
     content (which also will be ajax called)
 </div>
-<ul class="pagination class-3 class 4">...</ul>
+<ul class="pagination class-3 class 4">
+...
+    <li class="next">next page</li>
+</ul>
 
 ```
 Sidenotes: 
 - It is not important where the pagination is, it will be hidden anyways
-- It is important that infinite-scroll id and paginator classes are given
+- It is important that infinite-scroll id, paginator and next classes are given
 - It is not important what kind of elements they are. ul, div, span, if you are funny p or maybe even br (please let 
 me know when you achieve a ux friendly pagination with using < br />)
 
 
 ## Why ManlyScroll?
-- Ready to use <2 minutes. Stopwatch it mate!
+- Ready to use under 2 minutes. Stopwatch it mate!
 - No knowledge in Ugandan vodoo magic or virgin blood required like in similar projects (Or god forbid... 
 Time needed to read 40 Pages of documentation for implementation of a simple feature...)
-- Fulfills a large portion of standard use cases for pagination and scroll scenarios
+- Fulfills all standard use cases for pagination and scroll scenarios
 - No Bullshit included. One purpose, one tool.
 - Even my mom achieved to implement it...
 - OpenSource and well supported by me. You want a feature / have any improvement ideas. Fork it or write it! 
