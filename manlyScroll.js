@@ -4,6 +4,7 @@ var infiniteScroll = function () {
     var loadingIndicator = '<div id="loading-indicator"></div>';
     var paginator = document.getElementsByClassName('pagination');
     var neosPaginator = document.getElementsByClassName('page-navigation');
+    var nextPageLink = document.getElementsByClassName('next');
     if (paginator[0]) {
         paginator[0].style.display = 'none';
     }
@@ -15,7 +16,6 @@ var infiniteScroll = function () {
             var list = document.getElementById('infinite-scroll');
             loading = true;
             if (list !== null) {
-                var nextPageLink = document.getElementsByClassName('next');
                 if (nextPageLink[0]) {
                     list.insertAdjacentHTML('beforeend', loadingIndicator);
                     ajaxAndAppendHtml(nextPageLink[0].getElementsByTagName('a')[0].href, list);
@@ -35,6 +35,7 @@ var infiniteScroll = function () {
                 if (infiniteScrollBatch == null || infiniteScrollBatch.innerHTML === '') {
                     noMorePagesFollowing = true;
                 } else {
+                    nextPageLink = htmlBatch.getElementsByClassName('next');
                     node.insertAdjacentHTML('beforeend', infiniteScrollBatch.innerHTML);
                 }
                 loading = false;

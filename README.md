@@ -4,7 +4,7 @@ I regularly check for issues / PR and such.
 ## How to use
 1. Include manlyScroll.min.js and manlyScroll.min.css in your header
 2. Give your infiniteScrolling Element the id 'infinite-scroll'
-3. Give your Paginator the class 'paginator'
+3. Give your Paginator the class 'pagination'
 4. Give your next button of your paginator the class 'next'
 
 Than it works automaticly.
@@ -15,18 +15,20 @@ and so on. Your HTML of your search page should look like this:
 
 ```
 <h1>...</h1>
-<div id="infinite-scroll" class="class-1 class-2>
+<div id="infinite-scroll">
     content (which also will be ajax called)
 </div>
-<ul class="pagination class-3 class 4">
+<ul class="pagination">
 ...
-    <li class="next">next page</li>
+    <li class="next">
+        <a href="...">Next</a>
+    </li>
 </ul>
 
 ```
 Sidenotes: 
 - It is not important where the pagination is, it will be hidden anyways
-- It is important that infinite-scroll id, paginator and next classes are given
+- It is important that infinite-scroll id, pagination and next classes are given
 - It is not important what kind of elements they are. ul, div, span, if you are funny p or maybe even br (please let 
 me know when you achieve a ux friendly pagination with using < br />)
 
